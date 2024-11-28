@@ -9,6 +9,9 @@ from .models import Patient, Insurance, MedicalRecord
 
 
 class ListPatientView(ListAPIView, CreateAPIView):
+    """
+    Obtiene la lista de pacientes y permite crear un nuevo paciente.
+    """
     allowed_methods = ['GET', 'POST']
     serializer_class = PatientSerializer
     queryset = Patient.objects.all()
